@@ -1,4 +1,4 @@
-import { Address } from './../contacts/contact.model';
+import { Address, phoneTypeValues } from './../contacts/contact.model';
 import { CommonModule } from '@angular/common';
 import { ContactsService } from './../contacts/contacts.service';
 import { Component, OnInit } from '@angular/core';
@@ -13,6 +13,7 @@ import { ActivatedRoute, Router, RouterLink } from '@angular/router';
   styleUrl: './edit-contact.component.css',
 })
 export class EditContactComponent implements OnInit {
+  phoneTypes = phoneTypeValues
   contactForm: FormGroup ;
 
   // contactForm = new FormGroup({
