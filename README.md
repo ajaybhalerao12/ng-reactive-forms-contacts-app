@@ -1,7 +1,7 @@
 # NgReactiveFormsContactsApp
 
 ## Overview
-This repository is a comprehensive guide to learning and implementing reactive-forms forms in Angular. The project includes a range of examples and exercises to help developers understand the intricacies of template-driven forms in Angular. This project was generated with Angular CLI version 18.2.10.
+This repository is a comprehensive guide to learning and implementing reactive-forms forms in Angular. The project includes a range of examples and exercises to help developers understand the intricacies of reactive forms in Angular. This project was generated with Angular CLI version 18.2.10.
 
 ## Features
 - **Reactive Forms**: In-depth examples and explanations of reactive-forms in Angular.
