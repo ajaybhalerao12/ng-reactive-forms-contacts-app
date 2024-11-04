@@ -2,7 +2,7 @@ import { Address, phoneTypeValues } from './../contacts/contact.model';
 import { CommonModule } from '@angular/common';
 import { ContactsService } from './../contacts/contacts.service';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 
 @Component({
@@ -42,7 +42,7 @@ export class EditContactComponent implements OnInit {
   ) {
     this.contactForm = this.fb.group({
       id: [''],
-      firstName: [''],
+      firstName: ['', [Validators.required, Validators.minLength(3)]],
       lastName: [''],
       dateOfBirth: [''],
       favoritesRanking: [''],
@@ -84,6 +84,10 @@ export class EditContactComponent implements OnInit {
         // this.contactForm.controls.address.controls.addressType.setValue(contact.address.addressType);
       }
     });
+  }
+
+  getName() {
+    return this.contactForm.controls['firstName'].value;
   }
 
   saveContact() {

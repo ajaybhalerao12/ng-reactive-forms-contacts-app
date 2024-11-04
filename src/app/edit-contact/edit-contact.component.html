@@ -4,7 +4,10 @@
     <section>
       <nav>Name/Info</nav>
       <div>
-        <input formControlName="firstName" placeholder="First Name" />
+        <input formControlName="firstName" placeholder="First Name"
+        [class.error]="contactForm.controls['firstName'].invalid && contactForm.controls['firstName'].touched"/>
+        <em *ngIf="contactForm.controls['firstName'].errors?.['required'] && contactForm.controls['firstName'].touched">Please enter a valid name.</em>
+        <em *ngIf="contactForm.controls['firstName'].errors?.['minlength'] && contactForm.controls['firstName'].touched">Please enter 3 characters long.</em>
         <input formControlName="lastName" placeholder="Last Name" />
         <input formControlName="dateOfBirth" placeholder="Date of Birth" />
         <input
@@ -52,7 +55,7 @@
     </section>
     <div class="buttons">
       <button class="secondary">Cancel</button>
-      <button type="submit" class="primary">Save</button>
+      <button type="submit" class="primary" [disabled]="contactForm.invalid">Save</button>
     </div>
   </form>
 
